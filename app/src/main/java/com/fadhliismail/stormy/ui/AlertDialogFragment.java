@@ -1,10 +1,12 @@
-package com.fadhliismail.stormy;
+package com.fadhliismail.stormy.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+
+import com.fadhliismail.stormy.R;
 
 /**
  * Created by Fadhli Ismail on 12/10/2016.

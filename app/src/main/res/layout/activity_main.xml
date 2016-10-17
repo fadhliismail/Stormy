@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,10 +9,156 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.fadhliismail.stormy.MainActivity">
+    tools:context="com.fadhliismail.stormy.ui.MainActivity"
+    android:background="@drawable/bg_gradient">
 
     <TextView
+        android:text="100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tempLabel"
+        android:textSize="150sp"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/degree"
+        android:layout_alignTop="@+id/tempLabel"
+        android:layout_toEndOf="@+id/tempLabel"
+        android:id="@+id/degreeSymbol"
+        android:paddingTop="50dp"
+        android:contentDescription="degreeImageView"/>
+
+    <TextView
+        android:text="At 5:00PM it will be"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tempLabel"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/timeLabel"/>
+
+    <TextView
+        android:text="London, UK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeLabel"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/locationTextView"
+        android:layout_marginBottom="50dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/partly_cloudy"
+        android:layout_alignBottom="@+id/locationTextView"
+        android:layout_alignParentStart="true"
+        android:id="@+id/iconImageView"/>
+
+    <TextView
+        android:text="Rain rain go away...."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insideLinearLayout"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/summaryLabel"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/refresh"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/refreshWeather"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/refreshWeather"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressBar"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/insideLinearLayout"
+        android:layout_below="@+id/tempLabel"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="20sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="HUMIDITY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/humidityLabel"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:text="0.88"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/humidityValue"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="RAIN?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/precipLabel"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="70%"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/precipValue"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Hourly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/hourlyButton"/>
+
+        <Button
+            android:text="Daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/dailyButton"/>
+    </LinearLayout>
+
 </RelativeLayout>
